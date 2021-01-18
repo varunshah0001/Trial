@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+	<title>DetailsAndMenu</title>
+<style>
+.content {
+  max-width: 500px;
+  margin: auto;
+  background-color: rgb(165, 221, 198);
+  text-align: center;
+  font-family: "Sofia";
+  font-size: 22px;
+}
+
+</style>
+<body>
+<div class="content" >
+	<script>
+function checkButons(frm) {
+ var re = false; 
+ var err = ''; 
+
+ var Chocolate = frm.Chocolate; 
+
+
+ var Type = [frm.Cone, frm.Bar];
+
+ for(var i=0; i<Chocolate.length; i++) {
+ if(Chocolate[i].checked == true) {
+ re = true;
+ break;
+ }
+ }
+
+ if(re == false) err += '- You must check at least one Chocolate';
+
+
+ re = false
+ for(var i=0; i<Type.length; i++) {
+ if(Type[i].checked == true) {
+ re = true;
+ break;
+ }
+ }
+
+
+ if (re == false) err += '\n - You must check at least one Type';
+
+
+ if(err != '') {
+ alert(err);
+ return false;
+ }
+ else return re;
+}
+
+
+    function Validate() {
+        var dish = document.getElementById("email");
+        if (email.value == "") {
+           
+            alert("Please enter email");
+            return false;
+        }
+        return true;
+    }
+</script>
+</head>
+
+
+<h1><center>WELCOME</center></h1>
+<hr>
+<br>
+<h2>May I Know You?</h2>
+
+<form action='#' method='post' name='f1' onsubmit='return checkButons(this);'>
+    <label for="uname">Name:</label>
+    <input type="text" id="uname" name="username" value="">
+    <br><br>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="usermail"> <input type="submit" value="Validate" onclick="return Validate()" />
+     <br><br>
+     <label for="pass">Password:</label>
+     <input type="password" id="pass"><br><br>
+                    <label>Gender:</label>
+                     <label>
+                        <input type="radio" value="f" name="gender"> Female</label>
+                        <label>
+                        <input value="m" type="radio" name="gender"> Male</label>
+                </td>
+     <br><br>
+    
+	
+<h2>What would you like to have?</h2>
+<br>
+Choose one dish :
+<select id="dish">
+    <option value=""></option>
+    <option value="1">Sweet Corn</option>
+    <option value="2">Sandwhich</option>
+    <option value="3">Sizzler</option>
+</select>
+
+<input type="submit" value="Validate" onclick="return Validate()" />
+<form action='#' method='post' name='f1' onsubmit='return checkButons(this);'>
+<br><br>
+Chocolate: <input type='radio' name='Chocolate' value='Dairy_Milk' />Dairy Milk
+ <input type='radio' name='Chocolate' value='Kitkat' />Kitkat<br><br>
+Type:
+ <input type='checkbox' name='Cone' value='Cone' />Cone
+ <input type='checkbox' name='Bar' value='Bar' />Bar
+ <br><br>
+<input type='submit' value='Submit' />
+<button type="reset" value="Reset">Reset</button>
+
+</form>
+
+</div>
+</body>
+</html>
